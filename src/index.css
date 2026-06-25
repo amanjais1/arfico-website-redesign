@@ -1,0 +1,195 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  body {
+    @apply antialiased selection:bg-brand-purple-500 selection:text-white;
+  }
+
+  /* Accessible and smooth typography default styles */
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-sans font-bold text-slate-900 dark:text-zinc-50;
+  }
+  
+  p {
+    @apply text-slate-600 dark:text-zinc-400 leading-relaxed font-sans;
+  }
+}
+
+@layer components {
+  /* Dynamic mesh gradient background (Light Mode by default) */
+  .mesh-gradient {
+    background-color: #fafafa;
+    background-image: 
+      radial-gradient(at 10% 20%, rgba(139, 92, 246, 0.06) 0px, transparent 50%),
+      radial-gradient(at 90% 10%, rgba(13, 148, 136, 0.05) 0px, transparent 50%),
+      radial-gradient(at 50% 80%, rgba(244, 63, 94, 0.04) 0px, transparent 50%);
+    transition: background-color 0.3s ease, background-image 0.3s ease;
+  }
+
+  /* Dark Mode override using standard CSS nested selector */
+  .dark .mesh-gradient {
+    background-color: #09090b;
+    background-image: 
+      radial-gradient(at 10% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+      radial-gradient(at 90% 10%, rgba(13, 148, 136, 0.1) 0px, transparent 50%),
+      radial-gradient(at 50% 80%, rgba(244, 63, 94, 0.08) 0px, transparent 50%);
+  }
+
+  /* Structural Blueprint Grid Pattern (mask fades out the edges) */
+  .blueprint-grid {
+    background-size: 60px 60px;
+    background-image: 
+      linear-gradient(to right, rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+    mask-image: radial-gradient(ellipse at 50% 40%, black 30%, transparent 85%);
+  }
+
+  .dark .blueprint-grid {
+    background-image: 
+      linear-gradient(to right, rgba(139, 92, 246, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(139, 92, 246, 0.06) 1px, transparent 1px);
+  }
+
+  /* Dot Matrix Pattern Overlay */
+  .dot-matrix {
+    background-size: 24px 24px;
+    background-image: radial-gradient(rgba(13, 148, 136, 0.05) 1px, transparent 1px);
+    mask-image: radial-gradient(ellipse at 50% 50%, black 15%, transparent 75%);
+  }
+  
+  .dark .dot-matrix {
+    background-image: radial-gradient(rgba(13, 148, 136, 0.1) 1px, transparent 1px);
+  }
+
+  /* Orbiting Ambient Animation */
+  .animate-orbit-1 {
+    animation: orbit-1 25s ease-in-out infinite;
+  }
+  
+  .animate-orbit-2 {
+    animation: orbit-2 30s ease-in-out infinite;
+  }
+
+  @keyframes orbit-1 {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.95); }
+  }
+
+  @keyframes orbit-2 {
+    0%, 100% { transform: translate(0px, 0px) scale(1.05); }
+    50% { transform: translate(-40px, 40px) scale(0.9); }
+  }
+
+
+
+  /* Glassmorphism containers */
+  .glass-card {
+    @apply bg-white/70 dark:bg-zinc-900/60 backdrop-blur-xl border border-white/20 dark:border-zinc-800/40 shadow-glass-light dark:shadow-glass-dark;
+  }
+  
+  .glass-navbar {
+    @apply bg-white/70 dark:bg-zinc-950/70 backdrop-blur-md border-b border-slate-200/50 dark:border-zinc-800/50;
+  }
+
+  /* Custom glow effect that scales on hover */
+  .interactive-glow-purple {
+    @apply transition-all duration-500 hover:shadow-glow-purple hover:border-brand-purple-400/40;
+  }
+  
+  .interactive-glow-teal {
+    @apply transition-all duration-500 hover:shadow-glow-teal hover:border-brand-teal-400/40;
+  }
+
+  .interactive-glow-rose {
+    @apply transition-all duration-500 hover:shadow-glow-rose hover:border-brand-rose-400/40;
+  }
+
+  /* Modern, performant entry animations via CSS @starting-style */
+  .reveal-hero-logo {
+    opacity: 1;
+    scale: 1;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), scale 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-hero-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.0s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-hero-graphic {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Staggered load delays */
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+  .delay-400 { transition-delay: 400ms; }
+}
+
+@starting-style {
+  .reveal-hero-logo {
+    opacity: 0;
+    scale: 0.95;
+  }
+  .reveal-hero-content {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  .reveal-hero-graphic {
+    opacity: 0;
+    transform: translateX(40px) scale(0.95);
+  }
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300/60 dark:bg-zinc-800/60 rounded-full transition-colors duration-300 hover:bg-slate-400/80 dark:hover:bg-zinc-700/80;
+}
+
+/* Reduce motion accessibility overrides */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-medium,
+  .animate-float-fast,
+  .animate-spin-slow {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .reveal-hero-content,
+  .reveal-hero-graphic,
+  .reveal-hero-logo {
+    transform: none !important;
+    transition-duration: 0.1s !important;
+    transition-delay: 0s !important;
+  }
+
+  @starting-style {
+    .reveal-hero-content,
+    .reveal-hero-graphic,
+    .reveal-hero-logo {
+      transform: none !important;
+      opacity: 0 !important;
+      scale: 1 !important;
+    }
+  }
+}
