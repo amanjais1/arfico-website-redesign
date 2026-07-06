@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
+import ServicesSection from './components/ServicesSection';
+import ContactSection from './components/ContactSection';
 import BackgroundDecor from './components/BackgroundDecor';
 
 /**
@@ -11,6 +13,8 @@ import BackgroundDecor from './components/BackgroundDecor';
  * to light and dark modes.
  */
 function App() {
+  const [contactSubject, setContactSubject] = useState('Software Development');
+
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden transition-colors duration-300 mesh-gradient">
 
@@ -20,9 +24,11 @@ function App() {
       {/* Sticky top navigation header */}
       <Navbar />
       
-      {/* Main content body containing only the redesign Hero Section */}
+      {/* Main content body containing the Hero, Services, and Contact Sections */}
       <main className="w-full">
         <HeroSection />
+        <ServicesSection onSelectService={setContactSubject} />
+        <ContactSection contactSubject={contactSubject} />
       </main>
     </div>
   );

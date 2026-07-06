@@ -38,13 +38,14 @@ export default function Navbar() {
     },
     { 
       name: 'Services', 
-      href: '#', 
+      href: '#services', 
       hasDropdown: true,
       subItems: ['Digital Marketing', 'Civil Engineering', 'Business Consulting'] 
     },
     { name: 'Group Sites', href: '#' },
-    { name: 'Contact Us', href: '#' },
+    { name: 'Contact Us', href: '#contact' },
   ];
+
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-navbar reveal-hero-logo transition-colors duration-300">
@@ -101,7 +102,7 @@ export default function Navbar() {
                       {link.subItems.map((subItem) => (
                         <a
                           key={subItem}
-                          href="#"
+                          href="#services"
                           className="block px-4 py-2.5 text-xs font-medium text-slate-700 dark:text-zinc-300 hover:bg-brand-purple-50/50 dark:hover:bg-brand-purple-950/20 hover:text-brand-purple-600 dark:hover:text-brand-purple-400 transition-colors"
                         >
                           {subItem}
@@ -127,7 +128,7 @@ export default function Navbar() {
 
             {/* Glowing CTA Button */}
             <a
-              href="tel:+1234567890"
+              href="tel:+919472852131"
               className="relative inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-xl text-white bg-gradient-to-r from-brand-purple-600 to-brand-indigo-500 hover:from-brand-purple-500 hover:to-brand-indigo-400 transition-all duration-300 hover:shadow-glow-purple hover:-translate-y-0.5 active:translate-y-0"
             >
               <Phone className="w-4 h-4 mr-2" />
@@ -175,7 +176,7 @@ export default function Navbar() {
                     {link.subItems.map((subItem) => (
                       <a
                         key={subItem}
-                        href="#"
+                        href="#services"
                         className="block px-3 py-2 text-sm text-slate-500 dark:text-zinc-400 hover:text-brand-purple-600 dark:hover:text-brand-purple-400"
                         onClick={() => setIsOpen(false)}
                       >
@@ -189,7 +190,7 @@ export default function Navbar() {
             
             <div className="pt-4 px-3">
               <a
-                href="tel:+1234567890"
+                href="tel:+919472852131"
                 className="w-full flex items-center justify-center px-4 py-3 rounded-xl text-base font-bold text-white bg-gradient-to-r from-brand-purple-600 to-brand-indigo-500 shadow-md"
                 onClick={() => setIsOpen(false)}
               >

@@ -43,25 +43,9 @@ export default function BackgroundDecor() {
       </div>
 
       {/* Faint Horizontal Scope Coordinate Lines */}
-      <div className="absolute top-[12%] left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-slate-200/40 dark:via-zinc-800/40 to-transparent">
-        <div className="absolute -top-1 left-4 text-[8px] tracking-widest font-mono text-slate-400 dark:text-zinc-500 hidden xl:block">
-          [SCOPE_GRID_SEC_A]
-        </div>
-      </div>
-      <div className="absolute bottom-[12%] left-12 right-12 h-[1px] bg-gradient-to-r from-transparent via-slate-200/40 dark:via-zinc-800/40 to-transparent">
-        <div className="absolute -top-1 right-4 text-[8px] tracking-widest font-mono text-slate-400 dark:text-zinc-500 hidden xl:block">
-          REF_LINE_09
-        </div>
-      </div>
-
-
-      {/* 4. Fine Technical Labels & Telemetry Strings */}
-      <div className="absolute bottom-6 left-6 font-mono text-[9px] tracking-widest text-slate-400/80 dark:text-zinc-500/70 hidden sm:block">
-        GRID_SCALE: 1:50 | SYS_VER_2026.06
-      </div>
-      <div className="absolute top-24 right-6 font-mono text-[9px] tracking-widest text-slate-400/80 dark:text-zinc-500/70 hidden sm:block">
-        COORD: 22.9730° N, 72.5020° E
-      </div>
+      <div className="absolute top-[12%] left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-slate-200/40 dark:via-zinc-800/40 to-transparent" />
+      <div className="absolute bottom-[12%] left-12 right-12 h-[1px] bg-gradient-to-r from-transparent via-slate-200/40 dark:via-zinc-800/40 to-transparent" />
     </div>
+
   );
 }
