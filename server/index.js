@@ -24,6 +24,24 @@ app.get('/', (req, res) => {
   res.json({ status: 'running', service: 'Arfico MERN API', timestamp: new Date() });
 });
 
+// POST Route to Verify Admin Passcode
+app.post('/api/admin/login', (req, res) => {
+  const { passcode } = req.body;
+  const correctPasscode = process.env.ADMIN_PASSCODE || 'admin123';
+
+  if (passcode === correctPasscode) {
+    return res.status(200).json({
+      success: true,
+      message: 'Authentication successful.'
+    });
+  } else {
+    return res.status(401).json({
+      success: false,
+      message: 'Access Denied. Invalid Admin Passcode.'
+    });
+  }
+});
+
 // POST Route to Process Contact Inquiries
 app.post('/api/contact', async (req, res) => {
   const { name, email, subject, message } = req.body;
@@ -82,6 +100,61 @@ app.post('/api/contact', async (req, res) => {
     return res.status(500).json({
       success: false,
       message: 'Internal server error. Database transmission failed.'
+    });
+  }
+});
+
+// GET Route to Retrieve All Contact Inquiries
+app.get('/api/contact', async (req, res) => {
+  if (mongoose.connection.readyState !== 1) {
+    return res.status(503).json({
+      success: false,
+      message: 'Database connection is currently offline.'
+    });
+  }
+
+  try {
+    const inquiries = await Contact.find().sort({ createdAt: -1 });
+    return res.status(200).json({
+      success: true,
+      data: inquiries
+    });
+  } catch (error) {
+    console.error(`❌ [SERVER GET EXCEPTION]: ${error.message}`);
+    return res.status(500).json({
+      success: false,
+      message: 'Internal server error. Failed to retrieve inquiries.'
+    });
+  }
+});
+
+// DELETE Route to Remove a Contact Inquiry
+app.delete('/api/contact/:id', async (req, res) => {
+  if (mongoose.connection.readyState !== 1) {
+    return res.status(503).json({
+      success: false,
+      message: 'Database connection is currently offline.'
+    });
+  }
+
+  try {
+    const deletedInquiry = await Contact.findByIdAndDelete(req.params.id);
+    if (!deletedInquiry) {
+      return res.status(404).json({
+        success: false,
+        message: 'Inquiry not found.'
+      });
+    }
+    console.log(`🗑️  [INQUIRY DELETED] ID: ${req.params.id}`);
+    return res.status(200).json({
+      success: true,
+      message: 'Inquiry deleted successfully.'
+    });
+  } catch (error) {
+    console.error(`❌ [SERVER DELETE EXCEPTION]: ${error.message}`);
+    return res.status(500).json({
+      success: false,
+      message: 'Internal server error. Failed to delete inquiry.'
     });
   }
 });

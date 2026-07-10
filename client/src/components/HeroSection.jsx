@@ -44,7 +44,7 @@ export default function HeroSection() {
 
             {/* Supporting Description */}
             <p className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-zinc-400 font-medium mb-6 sm:mb-8 text-wrap-pretty transition-colors duration-300">
-              Arfico Private Limited delivers software development, web solutions, digital marketing, business consulting, and engineering services to help organizations grow with modern technology.
+              ARFico Private Limited delivers software development, web solutions, digital marketing, business consulting, and engineering services to help organizations grow with modern technology.
             </p>
 
             {/* CTA Button Actions */}

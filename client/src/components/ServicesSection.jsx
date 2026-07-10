@@ -4,7 +4,7 @@ import { Code, TrendingUp, Layers, Briefcase, ArrowRight, Check } from 'lucide-r
 /**
  * ServicesSection Component
  * 
- * Displays the core service pillars of Arfico Private Limited.
+ * Displays the core service pillars of ARFico Private Limited.
  * Features:
  * - 4-column responsive grid matching the glassmorphic brand theme.
  * - Interactive hover states with custom colored glowing shadows.
@@ -170,7 +170,7 @@ export default function ServicesSection({ onSelectService }) {
             Innovative Services Built for <span className="bg-gradient-to-r from-brand-purple-600 via-brand-rose-500 to-brand-teal-500 bg-clip-text text-transparent">Sustainable Growth.</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-500 dark:text-zinc-400 font-semibold leading-relaxed">
-            Arfico blends design precision with advanced tech to deliver business consulting, engineering plans, website development, and digital marketing.
+            ARFico blends design precision with advanced tech to deliver business consulting, engineering plans, website development, and digital marketing.
           </p>
         </div>
 

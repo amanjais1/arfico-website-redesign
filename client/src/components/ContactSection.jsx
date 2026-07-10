@@ -218,7 +218,7 @@ export default function ContactSection({ contactSubject }) {
             {/* Registered Address Block */}
             <div className="glass-card rounded-2xl p-5 border border-slate-200/50 dark:border-zinc-800/40 text-xs text-slate-500 dark:text-zinc-400 font-semibold leading-relaxed relative overflow-hidden">
               <span className="block font-bold text-slate-900 dark:text-zinc-200 mb-1">
-                ARFICO Pvt. Ltd. (Registered Address)
+                ARFico Pvt. Ltd. (Registered Address)
               </span>
               C/O, Ward No :- 25, MD. SHAFIUR RAHMAN, Fahim Manzil Hussain Chowk, Supaul, Bihar 852131
             </div>
@@ -242,7 +242,7 @@ export default function ContactSection({ contactSubject }) {
                   </h3>
                   
                   <p className="text-sm font-semibold text-slate-500 dark:text-zinc-400 max-w-sm mb-10 leading-relaxed text-center">
-                    Thank you, <strong className="text-slate-900 dark:text-zinc-200">{formData.name}</strong>. Your inquiry has been logged successfully. An Arfico consultant will contact you at <strong className="text-slate-900 dark:text-zinc-200">{formData.email}</strong> within 24 hours.
+                    Thank you, <strong className="text-slate-900 dark:text-zinc-200">{formData.name}</strong>. Your inquiry has been logged successfully. An ARFico consultant will contact you at <strong className="text-slate-900 dark:text-zinc-200">{formData.email}</strong> within 24 hours.
                   </p>
 
                   <button
@@ -372,7 +372,7 @@ export default function ContactSection({ contactSubject }) {
 
                       </div>
                       <span className="ml-3 text-xs font-semibold text-slate-500 dark:text-zinc-400 group-hover:text-slate-700 dark:group-hover:text-zinc-300 transition-colors leading-tight">
-                        I consent to Arfico Private Limited securely storing my details to contact me about this inquiry.
+                        I consent to ARFico Private Limited securely storing my details to contact me about this inquiry.
                       </span>
                     </label>
                   </div>

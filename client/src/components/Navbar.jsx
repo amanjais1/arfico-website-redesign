@@ -53,25 +53,14 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           
           {/* Logo Area */}
-          <div className="flex-shrink-0 flex items-center space-x-3 cursor-pointer">
-            {/* Custom SVG logo: Dynamic polygonal abstract icon representing consulting and engineering */}
-            <div className="relative w-10 h-10 flex items-center justify-center bg-gradient-to-tr from-brand-purple-600 to-brand-indigo-500 rounded-xl shadow-glow-purple overflow-hidden">
-              <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L2 22h4l6-12 6 12h4L12 2z" fill="currentColor" fillOpacity="0.85"/>
-                <circle cx="12" cy="12" r="2" fill="currentColor"/>
-                <line x1="12" y1="12" x2="6" y2="20" stroke="currentColor" strokeWidth="1.5"/>
-                <line x1="12" y1="12" x2="18" y2="20" stroke="currentColor" strokeWidth="1.5"/>
-              </svg>
-              <div className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            
-            <div className="flex flex-col">
-              <div className="flex items-baseline font-sans font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white">
+          <div className="flex-shrink-0 flex items-center cursor-pointer">
+            <div className="flex flex-col select-none">
+              <div className="flex items-baseline font-sans font-extrabold italic text-2xl tracking-normal text-slate-900 dark:text-white leading-none">
                 <span>ARFI</span>
-                <span className="bg-gradient-to-r from-brand-purple-500 to-brand-indigo-500 bg-clip-text text-transparent">CO</span>
+                <span className="text-[#8b5cf6] ml-[1px]">CO</span>
               </div>
-              <span className="text-[9px] uppercase tracking-[0.25em] font-medium text-slate-500 dark:text-zinc-400 -mt-1 font-sans">
-                Private Limited
+              <span className="text-[8px] uppercase tracking-[0.22em] font-extrabold text-slate-950 dark:text-zinc-200 mt-1 leading-none font-sans">
+                PRIVATE LIMITED
               </span>
             </div>
           </div>
@@ -129,7 +118,7 @@ export default function Navbar() {
             {/* Glowing CTA Button */}
             <a
               href="tel:+919472852131"
-              className="relative inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-xl text-white bg-gradient-to-r from-brand-purple-600 to-brand-indigo-500 hover:from-brand-purple-500 hover:to-brand-indigo-400 transition-all duration-300 hover:shadow-glow-purple hover:-translate-y-0.5 active:translate-y-0"
+              className="relative inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-xl text-white bg-brand-purple-500 hover:bg-brand-purple-600 transition-all duration-300 hover:shadow-glow-purple hover:-translate-y-0.5 active:translate-y-0"
             >
               <Phone className="w-4 h-4 mr-2" />
               <span>Call Now</span>
@@ -191,7 +180,7 @@ export default function Navbar() {
             <div className="pt-4 px-3">
               <a
                 href="tel:+919472852131"
-                className="w-full flex items-center justify-center px-4 py-3 rounded-xl text-base font-bold text-white bg-gradient-to-r from-brand-purple-600 to-brand-indigo-500 shadow-md"
+                className="w-full flex items-center justify-center px-4 py-3 rounded-xl text-base font-bold text-white bg-brand-purple-500 hover:bg-brand-purple-600 shadow-md transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 <Phone className="w-5 h-5 mr-2" />
